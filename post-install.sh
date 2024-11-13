@@ -1,8 +1,13 @@
 #!/bin/bash
-#
-# installation d'anydek
-wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | gpg --dearmor -o /usr/share/keyrings/anydesk-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/anydesk-archive-keyring.gpg] https://deb.anydesk.com/deb stable main" > /etc/apt/sources.list.d/anydesk.list
+
+# installation fichiers privetcloud
+mkdir /usr/local/share/privetcloud
+cp -r src/usr/local/share/privetcloud /usr/local/share/privetcloud
+chown -R privetcloud: /usr/local/share/privetcloud
+
+# installation anydesk
+wget -O /tmp/anydesk.deb https://download.anydesk.com/linux/anydesk_6.4.0-1_amd64.deb
+apt -f install /tmp/anydesk.deb
 
 apt-get update && apt-get --force-yes dist-upgrade
-apt install -y anydesk vim remmina remmina-* conky-all openssh-server numlockx
+apt install -y vim remmina remmina-* conky-all openssh-server numlockx
