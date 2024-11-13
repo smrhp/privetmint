@@ -11,7 +11,7 @@ if [ $? -eq 0 ]; then
   # Utiliser le nom d'utilisateur comme mot de passe
   echo "$username:$username" | sudo chpasswd
   echo "L'utilisateur $username a été créé avec le mot de passe par défaut."
-  sudo cp /src/templates/tpl_conky.conf /home/$username/.conkyrc
+  sudo cp /src/templates/conky.tpl /home/$username/.conkyrc
   sudo chown -R $username: /home/$username
 else
   echo "Erreur lors de la création de l'utilisateur."
