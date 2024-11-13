@@ -3,7 +3,7 @@
 read -p "Nom de l'utilisateur à créer :" username
 if [ -z "$username" ]; then
   echo "Vous devez saisir un nom d'utilisateur"
-  return -1
+  exit -1
 fi
 sudo useradd -m $username
 # Vérification de la création de l'utilisateur
@@ -15,7 +15,7 @@ if [ $? -eq 0 ]; then
   sudo chown -R $username: /home/$username
 else
   echo "Erreur lors de la création de l'utilisateur."
-  return -1
+  exit -1
 fi
 
 # installation fichiers privetcloud
