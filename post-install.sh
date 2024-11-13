@@ -27,5 +27,5 @@ cp -r src/usr/local/share/privetcloud /usr/local/share/privetcloud
 wget -O /tmp/anydesk.deb https://download.anydesk.com/linux/anydesk_6.4.0-1_amd64.deb
 apt -f -y install /tmp/anydesk.deb
 
-apt-get update && apt-get --force-yes dist-upgrade
+apt-get update && apt-get -y dist-upgrade
 apt install -y vim remmina remmina-* conky-all openssh-server numlockx
