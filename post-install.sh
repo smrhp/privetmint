@@ -4,7 +4,7 @@ read -p "Nom de l'utilisateur à créer :" username
 if [ -z "$username" ]; then
   echo "Vous devez saisir un nom d'utilisateur"
   return -1
-]
+fi
 sudo useradd -m $username
 # Vérification de la création de l'utilisateur
 if [ $? -eq 0 ]; then
