@@ -11,7 +11,7 @@ if [ $? -eq 0 ]; then
   # Utiliser le nom d'utilisateur comme mot de passe
   echo "$username:$username" | sudo chpasswd
   echo "L'utilisateur $username a été créé avec le mot de passe par défaut."
-  sudo cp src/templates/conky.tpl /home/$username/.conkyrc
+  sudo cp src/templates/conkyrc.tpl /home/$username/.conkyrc
   sudo chown -R $username: /home/$username
 else
   echo "Erreur lors de la création de l'utilisateur."
@@ -21,7 +21,7 @@ fi
 # installation fichiers privetcloud
 sudo mkdir /usr/local/share/privetcloud
 sudo chown -R privetcloud: /usr/local/share/privetcloud
-cp -r src/usr/local/share/privetcloud /usr/local/share/privetcloud
+cp -r src/usr/local/share/privetcloud/* /usr/local/share/privetcloud/
 
 # installation anydesk
 wget -O /tmp/anydesk.deb https://download.anydesk.com/linux/anydesk_6.4.0-1_amd64.deb
