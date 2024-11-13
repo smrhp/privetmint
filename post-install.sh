@@ -34,5 +34,6 @@ logo=/usr/local/share/privetcloud/logo.png
 activate-numlock=true
 EOL
 
-apt-get update && apt-get -y dist-upgrade
+apt-get update
 apt install -y vim remmina remmina-* conky-all openssh-server numlockx
+apt-get -y dist-upgrade
