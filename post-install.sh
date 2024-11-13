@@ -27,5 +27,12 @@ cp -r src/usr/local/share/privetcloud /usr/local/share/privetcloud
 wget -O /tmp/anydesk.deb https://download.anydesk.com/linux/anydesk_6.4.0-1_amd64.deb
 apt -f -y install /tmp/anydesk.deb
 
+# configuration personnalisée.
+sudo tee -a /etc/lightdm/slick-greeter.conf <<EOL
+[Greeter]
+logo=/usr/local/share/privetcloud/logo.png
+activate-numlock=true
+EOL
+
 apt-get update && apt-get -y dist-upgrade
 apt install -y vim remmina remmina-* conky-all openssh-server numlockx
