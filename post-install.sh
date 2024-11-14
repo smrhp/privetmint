@@ -38,4 +38,5 @@ apt-get update
 apt install -y vim remmina remmina-* conky-all openssh-server numlockx
 apt-get -y dist-upgrade
 
+bash config-droits.sh
 bash config-timeshift.sh
